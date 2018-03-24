@@ -1,17 +1,20 @@
-.app__container{
-  display: flex;
-}
 .editor__container, .moodboard__container{
-  width: 100%;
   padding: 10px;
   border: 1px solid rgba(0,0,0,0.23);
   margin: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  background: #fff;
+  margin-top: -69px;
+  z-index: 100;
 }
-.container_title{
-  margin-bottom: 20px;
-  padding: 0 10px;
+.container__title{
+  margin-bottom: 41px;
+  padding-left: 20px;
+  padding-top: 20px;
+  color: #535555;
 }
+
+/*Editor*/
 form{
   width: 70%;
   display: flex;
@@ -27,12 +30,14 @@ input[type="radio"] {
   margin-right: 4px;
 }
 .label {
-  margin: 12px 4px;
+  margin: 16px 4px;
   font-weight: bold;
+  font-size: 22px;
+  color: #535555;
 }
 .label:first-child{
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 #addMoodBtn{
   background: #00bcd4;
@@ -42,62 +47,97 @@ input[type="radio"] {
   border-radius: 3px;
   padding: 9px;
   font-size: 18px;
+  font-weight: bold;
 }
-.mood_section{
+#addMoodBtn:hover{
+  background: #0096a6;
+}
+.mood__section{
   display: flex;
   flex-direction: row;
 }
-.mood_section label{
+.mood__section label{
   padding: 0 10px;
 }
-
-
-
-.mood_list{
-  list-style-type: none;
-}
-.smiley{
-  width: 45px;
-}
-
 .visible {
-  display: flex; }
-
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
 .hidden {
-  display: none; }
+  display: none;
+}
 
-.mood_list{
+/*Moodboard*/
+.mood__list{
   list-style-type: none;
   display: grid;
-	grid-gap: 25px;
 	max-width: 1080px;
 	margin: 0 auto 50px;
   padding: 0 10px;
+  grid-template-columns: 1fr 1fr;
 }
-
-.info_message {
+.mood__item {
+  min-width: 115px;
+  min-height: 117px;
+  text-align: center;
+}
+.smiley{
+  width: 45px;
+  margin: 0 auto;
+}
+.info__message {
   padding: 2px;
   text-align: center;
   color: #000;
   border-bottom:  1px solid #00bcd4;
 }
-
-
-
+.link{
+  position: relative;
+}
+.addBtn{
+  background: #ffee4d;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  color: #3e3f3f;
+  font-size: 51px;
+  position: absolute;
+  top: -29px;
+  right: 10%;
+  -webkit-box-shadow:0px 3px 3px #3e3f3f;
+  -moz-box-shadow:0px 3px 3px #3e3f3f;
+  box-shadow:0px 3px 3px #3e3f3f;
+  text-decoration: none;
+}
+.addBtn:focus{
+  outline: none;
+}
 
 
 @media (min-width: 472px) and (max-width: 767px) {
-  .mood_list{
-    grid-template-columns: 1fr 1fr;
+  .mood__list{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .addBtn{
+    right: 8%;
   }
 }
 @media all and (min-width: 768px) {
-  .mood_list{
-    grid-template-columns: 1fr 1fr 1fr;
+  .mood__list{
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .addBtn{
+    right: 7%;
+
   }
 }
 @media all and (min-width: 949px) {
-  .mood_list{
+  .mood__list{
     grid-template-columns: repeat(7, 1fr);
+  }
+  .addBtn{
+    right: 39px;
   }
 }

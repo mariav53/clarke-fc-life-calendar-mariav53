@@ -50,12 +50,12 @@ class App extends Component {
     return (
       <div className="app">
         <header className="header">
-          <div className="topBlock"></div>
+          {/* <div className="topBlock"></div> */}
           <h1>¿Qué tal ha ido tu día?</h1>
-          <div className="bottomBlock"></div>
-          <Link to='/editor'>
+          {/* <div className="bottomBlock"></div> */}
+          {/* <Link to='/editor'>
             <button className="addBtn">+</button>
-          </Link>
+          </Link> */}
         </header>
         <main className="main">
           <Switch>

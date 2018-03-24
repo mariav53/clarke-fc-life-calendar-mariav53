@@ -1,7 +1,7 @@
 #  Life Calendar
 Crear un calendario en el que cada día se va apuntado qué tal ha ido el día eligiendo un smiley
 
-![imagen design](/assets/sad.png)
+![imagen design](src/assets/sad.png)
 
 ## Especificaciones
 **Se desarrollará una web-app con las siguientes características:**

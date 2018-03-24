@@ -1,4 +1,4 @@
-.editor__container, .moodboard__container{
+.editor__container{
   padding: 10px;
   border: 1px solid rgba(0,0,0,0.23);
   margin: 20px;
@@ -14,7 +14,6 @@
   color: #535555;
 }
 
-/*Editor*/
 form{
   width: 70%;
   display: flex;
@@ -39,7 +38,11 @@ input[type="radio"] {
   margin-top: 0;
   margin-bottom: 16px;
 }
-#addMoodBtn{
+
+.btn__section{
+  display: flex;
+}
+#addMoodBtn, #cancelBtn{
   background: #00bcd4;
   color: #fff;
   border: none;
@@ -48,8 +51,9 @@ input[type="radio"] {
   padding: 9px;
   font-size: 18px;
   font-weight: bold;
+  margin-right: 20px;
 }
-#addMoodBtn:hover{
+#addMoodBtn:hover, #cancelBtn:hover{
   background: #0096a6;
 }
 .mood__section{
@@ -58,6 +62,8 @@ input[type="radio"] {
 }
 .mood__section label{
   padding: 0 10px;
+  font-weight: bold;
+  color: #535555;
 }
 .visible {
   display: flex;
@@ -66,78 +72,4 @@ input[type="radio"] {
 }
 .hidden {
   display: none;
-}
-
-/*Moodboard*/
-.mood__list{
-  list-style-type: none;
-  display: grid;
-	max-width: 1080px;
-	margin: 0 auto 50px;
-  padding: 0 10px;
-  grid-template-columns: 1fr 1fr;
-}
-.mood__item {
-  min-width: 115px;
-  min-height: 117px;
-  text-align: center;
-}
-.smiley{
-  width: 45px;
-  margin: 0 auto;
-}
-.info__message {
-  padding: 2px;
-  text-align: center;
-  color: #000;
-  border-bottom:  1px solid #00bcd4;
-}
-.link{
-  position: relative;
-}
-.addBtn{
-  background: #ffee4d;
-  border: none;
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
-  color: #3e3f3f;
-  font-size: 51px;
-  position: absolute;
-  top: -29px;
-  right: 10%;
-  -webkit-box-shadow:0px 3px 3px #3e3f3f;
-  -moz-box-shadow:0px 3px 3px #3e3f3f;
-  box-shadow:0px 3px 3px #3e3f3f;
-  text-decoration: none;
-}
-.addBtn:focus{
-  outline: none;
-}
-
-
-@media (min-width: 472px) and (max-width: 767px) {
-  .mood__list{
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .addBtn{
-    right: 8%;
-  }
-}
-@media all and (min-width: 768px) {
-  .mood__list{
-    grid-template-columns: repeat(5, 1fr);
-  }
-  .addBtn{
-    right: 7%;
-
-  }
-}
-@media all and (min-width: 949px) {
-  .mood__list{
-    grid-template-columns: repeat(7, 1fr);
-  }
-  .addBtn{
-    right: 39px;
-  }
 }

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Mood from './Mood';
-import '../App/App.css';
-import happy from '../assets/happy.png';
-import sad from '../assets/sad.png';
+import './Moodboard.css';
 import { Link } from 'react-router-dom';
 
 class Moodboard extends Component {
@@ -14,13 +12,11 @@ class Moodboard extends Component {
             <button className="addBtn">+</button>
           </Link>
         </div>
-
         <div className="moodboard__container">
           <h2 className="container__title">Moodboard</h2>
           <div className="moodboard">
             <ul className="mood__list">
-              {this.props.allMoodData.sort(function(a,b) {
-                return new Date(a.date) - new Date(b.date);}).map((data) =>
+              {this.props.allMoodData.sort((a,b) => a.date - b.date).map((data) =>
                   <li className="mood__item" key={data.date}>
                     <Mood
                       date={data.date}
@@ -33,8 +29,7 @@ class Moodboard extends Component {
           </div>
         </div>
       </div>
-        );
-        }
-        }
-
-        export default Moodboard;
+    );
+  }
+}
+export default Moodboard;

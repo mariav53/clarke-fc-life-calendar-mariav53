@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-// import '../App/App.css';
 import './Editor.css';
-import happy from '../assets/happy.png';
-import sad from '../assets/sad.png';
 import { Link } from 'react-router-dom';
 
 class Editor extends Component {
@@ -24,9 +21,14 @@ class Editor extends Component {
             </label>
             <input className="input__text" type="text" id="message" onChange={this.props.handleMessage}/>
           </div>
-          <Link to='/'>
-            <button className="send__button" id="addMoodBtn" type="submit" onClick={this.props.handleClickAddMood}>Guardar</button>
-          </Link>
+          <div className="btn__section">
+            <Link to='/'>
+              <button className="send__button" id="addMoodBtn" type="submit" onClick={this.props.handleClickAddMood}>Guardar</button>
+            </Link>
+            <Link to='/'>
+              <button className="cancel__button" id="cancelBtn" type="submit">Cancelar</button>
+            </Link>
+          </div>
         </form>
       </div>
     );

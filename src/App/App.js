@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Editor from '../components/Editor';
 import Moodboard from '../components/Moodboard';
 import './App.css';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor(props){

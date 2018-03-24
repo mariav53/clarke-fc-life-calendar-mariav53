@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import Moodboard from './Moodboard';
-// import '../App/App.css';
-import './Editor.css';
+import './Mood.css';
 import happy from '../assets/happy.png';
 import sad from '../assets/sad.png';
-import { Link, Route, Switch } from 'react-router-dom';
 
 class Mood extends Component {
   constructor(props) {
@@ -13,21 +10,10 @@ class Mood extends Component {
       isShowing: false,
     };
   }
-
-  handleMouseHover() {
-   this.setState(this.toggleHoverState);
- }
-
- toggleHoverState(state) {
-   return {
-     isShowing: !state.isShowing,
-   };
- }
-
   render() {
     return (
       <div>
-        <div className="smiley__container"  onMouseEnter={() => this.handleMouseHover()} onMouseLeave={() => this.handleMouseHover()} >
+        <div className="smiley__container"  onMouseEnter={()=>this.setState({isShowing:true})} onMouseLeave={()=>this.setState({isShowing:false})} >
           {this.props.mood === 'happy' ?
             <img className="smiley" src={happy} alt={this.props.mood} title={this.props.date} /> :
             <img className="smiley" src={sad} alt={this.props.mood} title={this.props.date} />

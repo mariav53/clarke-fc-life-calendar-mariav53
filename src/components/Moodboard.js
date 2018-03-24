@@ -1,31 +1,26 @@
 import React, { Component } from 'react';
-import Moodboard from './Moodboard';
+import Mood from './Mood';
 import '../App/App.css';
 import happy from '../assets/happy.png';
 import sad from '../assets/sad.png';
 
-class Editor extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-
-      moods: []
-
-    }
-  }
-
+class Moodboard extends Component {
   render() {
-     const moods = this.props.moods;
     return (
       <div className="calendario">
-        <h2>Calendario</h2>
+        <h2>Moodboard</h2>
         <div className="mood_board">
           <ul className="mood_list">
-            {moods.map((mood, index) =>
-              <li className="mood_item" key={index} >
-                {mood==='happy' ? <img src={happy} /> : <img src={sad} />}
-              </li>
-            )}
+            {this.props.allMoodData.sort(function(a,b) {
+              return new Date(a.date) - new Date(b.date);}).map((data) =>
+                <li className="mood_item" key={data.date}>
+                  <Mood
+                    date={data.date}
+                    mood={data.mood}
+                    message= {data.message}
+                  />
+                </li>
+              )}
           </ul>
         </div>
       </div>
@@ -33,4 +28,4 @@ class Editor extends Component {
   }
 }
 
-export default Editor;
+export default Moodboard;
